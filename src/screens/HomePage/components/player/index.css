@@ -1,0 +1,22 @@
+.player-avatar {
+    width: 50%;
+    border-radius: 50%;
+}
+
+.player-block {
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.player-block-selected{
+    background-color: rgb(103, 235, 128) !important;
+}
+.check-icon{
+    color: rgb(255, 81, 0);
+}
+.choose-button{
+    font-family: 'Fredoka One', cursive !important;
+    background-color: rgb(103, 235, 128) !important;
+}

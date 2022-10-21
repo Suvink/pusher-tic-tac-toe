@@ -1,0 +1,21 @@
+.name-input-field{
+    width: 30rem;
+}
+.name-input-field :focus{
+    border-color: coral !important;
+    box-shadow: 0 0 0 0.125em coral !important;
+}
+.details-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+input{
+    font-family: 'Fredoka One', cursive !important;
+}
+.play-button{
+    font-family: 'Fredoka One', cursive !important;
+    background-color: coral !important;
+    color: #000 !important
+}

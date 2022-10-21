@@ -1,0 +1,28 @@
+.main-title-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.home-title {
+    font-size: 5rem !important;
+    font-weight: 600;
+    color: #000 !important;
+}
+
+.ttt-logo {
+    width: 10%;
+}
+
+.opponent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+.play-btn{
+    margin-top: 3rem;
+    background-color: #f0466b !important;
+    font-size: 2rem !important;
+    width: 14rem;
+    font-family: 'Fredoka One', cursive !important;
+}
