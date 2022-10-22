@@ -17,4 +17,8 @@ code {
     monospace;
 }
 
+.swal2-confirm{
+  font-family: 'Fredoka One', cursive !important;
+}
+
 /* Color Palette */

@@ -1,21 +1,60 @@
-.name-input-field{
+.name-input-field {
     width: 30rem;
 }
-.name-input-field :focus{
+
+.name-input-field :focus {
     border-color: coral !important;
     box-shadow: 0 0 0 0.125em coral !important;
 }
-.details-section{
+
+.details-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
 }
-input{
+
+input {
     font-family: 'Fredoka One', cursive !important;
 }
-.play-button{
+
+.play-button {
     font-family: 'Fredoka One', cursive !important;
-    background-color: coral !important;
-    color: #000 !important
+    background-color: #f0466b !important;
+    color: #fff !important;
+}
+
+.login-ttt-logo {
+    width: 9rem
+}
+
+.footer-text {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.sponsorship{
+    text-align: center;
+}
+
+.bmc-logo{
+    width: 9rem;
+}
+
+@media only screen and (max-width: 711px) {
+    .name-input-field {
+        width: 20rem;
+    }
+
+    .login-inputs {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .footer-text{
+        position: relative;
+        margin-top: 3rem;
+    }
 }

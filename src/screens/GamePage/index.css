@@ -1,3 +1,14 @@
 .game-board-section{
     height: 300px;
 }
+.control-buttons {
+    position: absolute !important;
+    right: 0 !important;
+    margin-right: 3rem;
+    margin-top: 3rem;
+}
+
+.mute-button {
+    background-color: #f0466b !important;
+    color: white !important;
+}

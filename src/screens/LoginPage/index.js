@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import TTTLogo from "../../assets/ttt-logo.png";
 import axios from "axios";
 import Swal from "sweetalert2";
 import './index.css';
 
-const LoginPage = () => {
+const LoginPage = ({ play, pause, isMute }) => {
 
-  const [loading, isLoading] = useState(false);
   const [username, setUsername] = useState("");
   const history = useHistory();
 
   const login = () => {
+    play();
     if (username === "") {
       Swal.fire(
         'Grr!',
@@ -19,29 +19,36 @@ const LoginPage = () => {
         'warning'
       )
       return;
+    } else {
+      localStorage.setItem('username', username);
+      axios.post(`${process.env.REACT_APP_BASE_URL}/create`, {
+        name: username
+      }).then(response => {
+        if (response.data.message === "success") {
+          localStorage.setItem("userId", response.data.data.id);
+          history.push("/");
+        }
+      })
     }
-
-    axios.post("http://localhost:5000/create", {
-      name: username
-    }).then(response => {
-      console.log(response.data)
-      if (response.data.message === "success") {
-        localStorage.setItem("userId", response.data.data.id);
-        history.push("/");
-      }
-    })
   }
 
   return (
     <section className="home-page">
+      <div className="control-buttons">
+        <button class="button mute-button" onClick={() => isMute ? play() : pause()}>
+          <span class="icon is-small">
+            <i class={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
+          </span>
+        </button>
+      </div>
       <div className="main-title-section">
-        <img className="ttt-logo" src={TTTLogo} alt="" />
+        <img className="login-ttt-logo" src={TTTLogo} alt="" />
         <h1 className="title home-title is-1">Howdy Player!</h1>
       </div>
-      <div className="details-section has-text-centered">
-        <div className="field is-grouped is-grouped-centered">
+      <div className="details-section has-text-centered pl-3 pr-3">
+        <div className="field is-grouped is-grouped-centered login-inputs">
           <div className="field name-input-field">
-            <div className="control has-icons-left has-icons-right">
+            <div className="control has-icons-left">
               <input className="input is-large" type="email" placeholder="Yurr good name sir!" onChange={(e) => setUsername(e.target.value)} />
               <span className="icon is-medium is-left">
                 <i className="fas fa-user fa-lg"></i>
@@ -54,6 +61,14 @@ const LoginPage = () => {
             </button>
           </p>
         </div>
+      </div>
+      <div className="sponsorship">
+        <a href="https://www.buymeacoffee.com/suvink" target="_blank">
+          <img className="bmc-logo" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
+        </a>
+      </div>
+      <div className="footer-text p-3 has-text-centered">
+        <p className="subtitle is-6">Made with ♥️ by <a href="https://twitter.com/tikirimaarie">Suvink</a></p>
       </div>
     </section>
   );

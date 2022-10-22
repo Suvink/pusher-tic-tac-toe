@@ -10,7 +10,7 @@ const Player = (props) => {
             <h1 className="title is-3 mb-2">{props.name}
                 {props.selected ? <span><i className="check-icon fas fa-circle ml-2"></i></span> : null}
             </h1>
-            <button id={props.id} className='button is-small choose-button' onClick={props.onClick}>Select</button>
+            {/* <button id={props.id} className='button is-small choose-button' onClick={props.onClick}>Select</button> */}
         </div>
     );
 }
