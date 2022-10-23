@@ -116,6 +116,7 @@ const GamePage = ({ play, pause, isMute }) => {
     if (winner || boardCopy[i]) return;
     // Put an X or an O in the clicked square
     boardCopy[i] = xIsNext ? "X" : "O";
+    setBoard(boardCopy)
     axios.post(`${process.env.REACT_APP_BASE_URL}/makeMove`, {
       myId: userId,
       roomId: roomId,
