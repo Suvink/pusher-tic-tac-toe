@@ -35,9 +35,9 @@ const LoginPage = ({ play, pause, isMute }) => {
   return (
     <section className="home-page">
       <div className="control-buttons">
-        <button class="button mute-button" onClick={() => isMute ? play() : pause()}>
-          <span class="icon is-small">
-            <i class={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
+        <button className="button mute-button" onClick={() => isMute ? play() : pause()}>
+          <span className="icon is-small">
+            <i className={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
           </span>
         </button>
       </div>
@@ -55,14 +55,14 @@ const LoginPage = ({ play, pause, isMute }) => {
               </span>
             </div>
           </div>
-          <p className="control ml-4">
+          <p className="control login-button">
             <button className="button is-light is-large play-button" onClick={login}>
               Let's Go!
             </button>
           </p>
         </div>
       </div>
-      <div className="sponsorship">
+      <div className="sponsorship mt-2">
         <a href="https://www.buymeacoffee.com/suvink" target="_blank">
           <img className="bmc-logo" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" />
         </a>

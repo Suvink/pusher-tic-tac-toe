@@ -143,13 +143,13 @@ const GamePage = ({ play, pause, isMute }) => {
         height={height}
       />}
       <div className="control-buttons">
-        <button class="button mute-button mr-3" onClick={() => isMute ? play() : pause()}>
-          <span class="icon is-small">
-            <i class={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
+        <button className="button mute-button mr-3" onClick={() => isMute ? play() : pause()}>
+          <span className="icon is-small">
+            <i className={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
           </span>
         </button>
         <button className="button mute-button" onClick={logout}>
-          <i class="fas fa-times mr-2"></i> Stop
+          <i className="fas fa-times mr-2"></i> Stop
         </button>
       </div>
       <div className="main-title-section">

@@ -26,3 +26,9 @@
     width: 14rem;
     font-family: 'Fredoka One', cursive !important;
 }
+
+@media only screen and (max-width: 435px) {
+    .home-title{
+        font-size: 3rem !important;
+    }
+}

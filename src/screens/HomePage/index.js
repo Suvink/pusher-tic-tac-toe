@@ -71,13 +71,13 @@ const HomePage = ({ play, pause, isMute }) => {
   return (
     <section className="home-page">
       <div className="control-buttons">
-        <button class="button mute-button mr-3" onClick={() => isMute ? play() : pause()}>
-          <span class="icon is-small">
-            <i class={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
+        <button className="button mute-button mr-3" onClick={() => isMute ? play() : pause()}>
+          <span className="icon is-small">
+            <i className={isMute ? "fas fa-volume-mute" : "fas fa-volume-up"}></i>
           </span>
         </button>
         <button className="button mute-button" onClick={logout}>
-          <i class="fas fa-times mr-2"></i> Stop
+          <i className="fas fa-times mr-2"></i> Stop
         </button>
       </div>
       <div className="main-title-section">
@@ -106,6 +106,9 @@ const HomePage = ({ play, pause, isMute }) => {
       </div>
       <div className="button-row has-text-centered mt-1">
         <button className="button is-primary is-large play-btn" onClick={createGame}>New Game</button>
+      </div>
+      <div className="footer-text p-3 has-text-centered">
+        <p className="subtitle is-6">Made with ♥️ by <a href="https://twitter.com/tikirimaarie">Suvink</a></p>
       </div>
     </section>
   );

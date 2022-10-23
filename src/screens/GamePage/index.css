@@ -1,5 +1,5 @@
 .game-board-section{
-    height: 300px;
+    height: 21rem;
 }
 .control-buttons {
     position: absolute !important;
@@ -12,3 +12,4 @@
     background-color: #f0466b !important;
     color: white !important;
 }
+
