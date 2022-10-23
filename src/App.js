@@ -28,7 +28,7 @@ const App = () => {
       <ReactHowler
         src={bgMusic}
         playing={playing}
-        volume={0.4}
+        volume={0.6}
         onPause={() => setIsMute(true)}
         onPlay={() => setIsMute(false)}
         loop={true}
