@@ -31,6 +31,7 @@ const GamePage = ({ play, pause, isMute }) => {
   const [latestMoveBy, setLatestMoveBy] = useState(null);
   const [clickSound] = useSound(clickSoundClip);
   const [winnerSound] = useSound(winnerSoundClip);
+  const [subs, setSubs] = useState(0);
 
   useEffect(() => {
     if (!userId || localStorage.getItem('userId') === 'null') {
@@ -47,6 +48,10 @@ const GamePage = ({ play, pause, isMute }) => {
 
     channel.bind("user_joined", (data) => {
       setRoomData(data.data);
+    });
+
+    channel.bind("pusher:subscription_count", (data) => {
+      setSubs(data.subscription_count);
     });
 
     channel.bind("new_move", (data) => {
@@ -155,7 +160,7 @@ const GamePage = ({ play, pause, isMute }) => {
       <div className="main-title-section">
         <img className="ttt-logo" src={TTTLogo} alt="" />
         <h1 className="title home-title is-1 mb-1">Game On!</h1>
-        <p className="title is-4">Room ID: {roomId || "000000"}</p>
+        <p className="title is-4">Room ID: {roomId || "000000"} <span className="ml-1 mr-1">|</span> Players: {subs || 0}</p>
       </div>
       <div className="game-section">
         <div className="columns">
