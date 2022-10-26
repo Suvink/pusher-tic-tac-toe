@@ -1,3 +1,8 @@
+.home-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 .name-input-field {
     width: 30rem;
 }
@@ -29,9 +34,10 @@ input {
 }
 
 .footer-text {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
 }
 
 .sponsorship{
@@ -60,10 +66,4 @@ input {
         margin-left: 0 !important;
     }
 
-}
-@media only screen and (max-width: 769px) {
-    .footer-text{
-        position: relative;
-        margin-top: 3rem;
-    }
 }
